@@ -1,0 +1,30 @@
+import os
+
+name = input('Hello, please enter you name: ')
+print('Hello,', name,'please fill in the required information')
+address = input('Enter your address: ')
+phone = input ('Enter your phone number: ')
+
+list = (name, address, phone)
+file_path = "path/newfolder"
+file_name = "new folder"
+complete_path = file_path+file_name
+print(list)
+
+if os.path.file('new folder'): #check if file exists
+ print('File Exists')
+if os.path.isdir(file_path): #check if file path exists
+ print('Directory Exists')
+if os.path.exists(complete_path): #check if complete path exists
+ print('Complete path exists')
+print('Complete Path',complete_path)
+with open(complete_path, 'w') as fileHandle: #open file for writing
+ fileHandle.write("I love programming and Python.") #write data to file
+with open(complete_path, 'r') as fileHandle: #open same file for reading
+ data = fileHandle.read() #read data from the file
+ print(data)
+
+if not os.path.exists(file_path):
+  os.makedirs(file_path)
+else:
+  print('folder already exists.')
